@@ -1,3 +1,3 @@
-import { render } from './slider.js'
+import { render } from './render.js'
 
 render()
