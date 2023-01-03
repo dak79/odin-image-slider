@@ -40,7 +40,7 @@ export const render = () => {
   ]
   /* hook.innerHTML = '<h1>Hello<h1>' */
   slideUi(hook, pictures)
-  showSlide(pictures);
+  showSlide(pictures)
 }
 
 const slideUi = (hook, images) => {
@@ -58,36 +58,47 @@ const slideUi = (hook, images) => {
     picture.setAttribute('data-number', `${image.id}`)
     picture.classList.add('pictures')
 
+    const btnPrev = btnUi('prev')
+    slide.appendChild(btnPrev)
+
     slide.appendChild(picture)
+
+    const btnNext = btnUi('next')
+    slide.appendChild(btnNext)
+
     slideContainer.appendChild(slide)
   })
-
   hook.appendChild(slideContainer)
 }
 
+const btnUi = (id) => {
+  const btn = document.createElement('button')
+  btn.setAttribute('type', 'button')
+  btn.id = `btn-${id}`
+  btn.classList.add('btn')
+
+  if (id === 'next') {
+    btn.innerHTML = `<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                      <path fill="currentColor" d="M16,18H18V6H16M6,18L14.5,12L6,6V18Z" />
+                    </svg>`
+  } else {
+    btn.innerHTML = `<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                      <path fill="currentColor" d="M6,18V6H8V18H6M9.5,12L18,6V18L9.5,12Z" />
+                    </svg>`
+  }
+
+  return btn
+}
+
 const showSlide = (images) => {
-  const imgs = document.querySelectorAll('.slides') 
+  const imgs = document.querySelectorAll('.slides')
 
   let i = 3
-  const show = images.find(image => image.id === i)
+  const show = images.find((image) => image.id === i)
   console.log(show)
   const imgA = Array.from(imgs)
   console.log(imgA)
-  console.log(imgA.find(img => img.dataset.number === String(i)))
-  const b = imgA.find(img => img.dataset.number === String(i))
+  console.log(imgA.find((img) => img.dataset.number === String(i)))
+  const b = imgA.find((img) => img.dataset.number === String(i))
   b.classList.toggle('active')
-  
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
