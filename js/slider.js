@@ -72,7 +72,9 @@ const slideUi = (hook, images) => {
 }
 
 const btnUi = (id) => {
+  
   const btn = document.createElement('button')
+  
   btn.setAttribute('type', 'button')
   btn.id = `btn-${id}`
   btn.classList.add('btn')

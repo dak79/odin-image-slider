@@ -54,11 +54,27 @@ body,
   background-color: var(--slate-200);
 }
 
-.slides.active{
+.slides.active {
   display: flex;
 }
 
 .pictures {
   height: 90%;
- width: 90%; 
+  width: 90%;
+}
+
+.btn {
+  width: 5em;
+  height: 5em;
+  margin: 0 1em 0 1em;
+  border-radius: 100%;
+
+  border: none;
+  color: var(--slate-50);
+  background-color: var(--slate-900);
+  opacity: 0.7
+}
+
+.btn:hover {
+  background-color: var(--slate-700);
 }
