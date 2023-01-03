@@ -1,0 +1,26 @@
+{
+  "name": "@dak79/image-slider",
+  "version": "0.0.1",
+  "description": "A simple image slider",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dak79/odin-image-slider.git"
+  },
+  "keywords": [
+    "components",
+    "image-slider",
+    "css",
+    "html",
+    "javascript"
+  ],
+  "author": "Daniele Campari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dak79/odin-image-slider/issues"
+  },
+  "homepage": "https://github.com/dak79/odin-image-slider#readme"
+}
