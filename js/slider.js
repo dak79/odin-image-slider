@@ -54,4 +54,4 @@ const slideUi = (hook, images) => {
   })
 
   hook.appendChild(slideContainer)
-}
+} 
