@@ -45,13 +45,20 @@ body,
   flex-direction: row;
 }
 
-.slide {
-  padding: 0.5em;
-  margin: 0.5em;
+.slides {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  margin: 1em;
   background-color: var(--slate-200);
 }
 
+.slides.active{
+  display: flex;
+}
+
 .pictures {
-  height: 100%;
-  width: 100%;
+  height: 90%;
+ width: 90%; 
 }
