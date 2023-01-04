@@ -1,3 +1,8 @@
+/**
+ * @param {Array.Object} images - Array of pictures
+ * @param {number} imgId - Id of picture
+ * @param {boolean} isFirst - First rendering
+ */
 export const slideShow = (images, imgId, isFirst) => {
   showSlide(false, images, imgId, isFirst)
 
@@ -12,6 +17,13 @@ export const slideShow = (images, imgId, isFirst) => {
   )
 }
 
+
+/**
+ * @param {Event} event - Mouse Event 
+ * @param {Array.Object} images - Array of pictures
+ * @param {number} currentImgId - Id of picture
+ * @param {boolean} isFirst - First rendering
+ */
 const showSlide = (event, images, currentImgId, isFirst) => {
   const imgs = Array.from(document.querySelectorAll('.slides'))
 
@@ -31,7 +43,7 @@ const showSlide = (event, images, currentImgId, isFirst) => {
     }
   }
 }
-
+showSlide
 const showImg = (imgs, currentId, prevId) => {
   const currentImg = imgs.find(
     (img) => img.dataset.number === String(currentId)
