@@ -63,7 +63,7 @@ body,
   width: 90%;
 }
 
-.btn {
+.slide-btns {
   width: 5em;
   height: 5em;
   margin: 0 1em 0 1em;
@@ -75,6 +75,6 @@ body,
   opacity: 0.7;
 }
 
-.btn:hover {
+.slide-btns:hover {
   background-color: var(--slate-700);
 }
