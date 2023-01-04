@@ -1,4 +1,5 @@
 /**
+ * Enable slideshow logic.  
  * @param {Array.Object} images - Array of pictures
  * @param {number} imgId - Id of picture
  * @param {boolean} isFirst - First rendering
@@ -17,12 +18,12 @@ export const slideShow = (images, imgId, isFirst) => {
   )
 }
 
-
 /**
- * @param {Event} event - Mouse Event 
- * @param {Array.Object} images - Array of pictures
- * @param {number} currentImgId - Id of picture
- * @param {boolean} isFirst - First rendering
+ * Show slide
+ * @param {Event} event - Mouse Event. 
+ * @param {Array.Object} images - Array of pictures.
+ * @param {number} currentImgId - Id of picture.
+ * @param {boolean} isFirst - First rendering.
  */
 const showSlide = (event, images, currentImgId, isFirst) => {
   const imgs = Array.from(document.querySelectorAll('.slides'))
@@ -43,7 +44,13 @@ const showSlide = (event, images, currentImgId, isFirst) => {
     }
   }
 }
-showSlide
+
+/**
+ * Show image 
+ * @param {Array.Node} imgs - Array of nodes (each img element created). 
+ * @param {number} currentId - Current image id.
+ * @param {number} prevId - Previous image id.
+ */
 const showImg = (imgs, currentId, prevId) => {
   const currentImg = imgs.find(
     (img) => img.dataset.number === String(currentId)
@@ -62,6 +69,13 @@ const showImg = (imgs, currentId, prevId) => {
   }
 }
 
+/**
+ * Increment or decrement current id. 
+ * @param {Event} event - Mouse Event. 
+ * @param {Array.Object} images - Array of pictures. 
+ * @param {number} imgId - Current id. 
+ * @returns {number} - Increment/decrement current id. 
+ */
 const changeSlide = (event, images, imgId) => {
   if (String(event.target.id) === 'btn-next') {
     if (imgId < images.length) imgId++
