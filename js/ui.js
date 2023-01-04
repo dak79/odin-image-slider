@@ -1,3 +1,8 @@
+/**
+ * Build Ui for slider.
+ * @param {Node} hook - Hook to HTML file
+ * @param {Array.Object} images - Array of pictures
+ */
 export const slideUi = (hook, images) => {
   const slideContainer = document.createElement('div')
   slideContainer.classList.add('slide-container')
@@ -27,6 +32,11 @@ export const slideUi = (hook, images) => {
   hook.appendChild(slideContainer)
 }
 
+/**
+ *  Create a button
+ * @param {'next'|'prev'} id - Part of button id's.
+ * @returns {Element} - A button element.
+ */
 const btnUi = (id) => {
   const btn = document.createElement('button')
   btn.setAttribute('type', 'button')
