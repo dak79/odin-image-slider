@@ -1,8 +1,6 @@
 import { slideUi } from './ui.js'
 import { slideShow } from './slider.js'
 
-
-// TODO: Rename variable i
 export const render = () => {
   const hook = document.querySelector('#hook')
   const pictures = [
@@ -44,7 +42,7 @@ export const render = () => {
     },
   ]
   /* hook.innerHTML = '<h1>Hello<h1>' */
-let i = 1
+  let firstImgId = 1
   slideUi(hook, pictures)
-  slideShow(pictures, i)
+  slideShow(pictures, firstImgId, true)
 }

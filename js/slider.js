@@ -1,37 +1,53 @@
-// TODO: Rename varable i
 
-export const slideShow = (images, i) => {
-  showSlide(images, i)
+export const slideShow = (images, imgId, isFirst) => {
+  showSlide(false, images, imgId, isFirst)
+
+  isFirst = false
   const btns = document.querySelectorAll('.slide-btns')
   btns.forEach((btn) =>
-    btn.addEventListener('click', () => {
-      i = changeSlide(event, images, i)
-      showSlide(images, i)
+    btn.addEventListener('click', (event) => {
+      imgId = changeSlide(event, images, imgId)
+
+      showSlide(event, images, imgId, isFirst)
     })
   )
 }
 
-// TODO: hide previous img and show the second
-// TODO: reneame variable
-const showSlide = (images, i) => {
-  const imgs = document.querySelectorAll('.slides')
-
-
-  const show = images.find((image) => image.id === i)
-  const imgA = Array.from(imgs)
-  const b = imgA.find((img) => img.dataset.number === String(i))
-  b.classList.toggle('active')
-}
-
-// TODO: gestisci i > images.length and i < 0
-// TODO: rename i
-const changeSlide = (event, images, i) => {
-  if (String(event.target.id) === 'btn-next') {
-    i++
+const showSlide = (event, images, currentImgId, isFirst) => {
+  const imgs = Array.from(document.querySelectorAll('.slides'))
+  if (isFirst) {
+    showImg(imgs, currentImgId)
   } else {
-    i--
+    if (currentImgId <= images.length && currentImgId > 0) {
+      let prevImgId
+      if (event.target.id === String('btn-next')) {
+        prevImgId = currentImgId - 1
+      } else {
+        prevImgId = currentImgId + 1
+      }
+      showImg(imgs, currentImgId, prevImgId)
+    }
   }
-
-  return i
 }
 
+const showImg = (imgs, currentId, prevId) => {
+  const currentImg = imgs.find((img) => img.dataset.number === String(currentId))
+  const prevImg = imgs.find((img) => img.dataset.number === String(prevId))
+  if (parseInt(currentId) <= imgs.length && !currentImg.classList.contains('active')) {
+    if (currentImg) {
+      currentImg.classList.toggle('active')
+    }
+    if (prevImg) {
+      prevImg.classList.toggle('active')
+    }
+  }
+}
+
+const changeSlide = (event, images, imgId) => {
+  if (String(event.target.id) === 'btn-next') {
+    if (imgId < images.length) imgId++
+  } else {
+    if (imgId > 1) imgId--
+  }
+  return imgId
+}
