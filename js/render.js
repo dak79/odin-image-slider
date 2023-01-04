@@ -1,8 +1,10 @@
-import { slideUi } from './ui.js';
-import { showSlide } from './slider.js';
+import { slideUi } from './ui.js'
+import { slideShow } from './slider.js'
 
+
+// TODO: Rename variable i
 export const render = () => {
-  const hook = document.querySelector('#hook');
+  const hook = document.querySelector('#hook')
   const pictures = [
     {
       id: 1,
@@ -40,8 +42,9 @@ export const render = () => {
       url: '../assets/img6.JPG',
       alt: 'Calystegia sepium',
     },
-  ];
+  ]
   /* hook.innerHTML = '<h1>Hello<h1>' */
-  slideUi(hook, pictures);
-  showSlide(pictures);
-};
+let i = 1
+  slideUi(hook, pictures)
+  slideShow(pictures, i)
+}
