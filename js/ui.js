@@ -23,12 +23,12 @@ export const slideUi = (hook, images) => {
 
     slideContainer.appendChild(slide)
   })
+
   hook.appendChild(slideContainer)
 }
 
 const btnUi = (id) => {
   const btn = document.createElement('button')
-
   btn.setAttribute('type', 'button')
   btn.id = `btn-${id}`
   btn.classList.add('slide-btns')

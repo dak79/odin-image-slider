@@ -1,4 +1,3 @@
-
 export const slideShow = (images, imgId, isFirst) => {
   showSlide(false, images, imgId, isFirst)
 
@@ -15,25 +14,33 @@ export const slideShow = (images, imgId, isFirst) => {
 
 const showSlide = (event, images, currentImgId, isFirst) => {
   const imgs = Array.from(document.querySelectorAll('.slides'))
+
   if (isFirst) {
     showImg(imgs, currentImgId)
   } else {
     if (currentImgId <= images.length && currentImgId > 0) {
       let prevImgId
+
       if (event.target.id === String('btn-next')) {
         prevImgId = currentImgId - 1
       } else {
         prevImgId = currentImgId + 1
       }
+
       showImg(imgs, currentImgId, prevImgId)
     }
   }
 }
 
 const showImg = (imgs, currentId, prevId) => {
-  const currentImg = imgs.find((img) => img.dataset.number === String(currentId))
+  const currentImg = imgs.find(
+    (img) => img.dataset.number === String(currentId)
+  )
   const prevImg = imgs.find((img) => img.dataset.number === String(prevId))
-  if (parseInt(currentId) <= imgs.length && !currentImg.classList.contains('active')) {
+  if (
+    parseInt(currentId) <= imgs.length &&
+    !currentImg.classList.contains('active')
+  ) {
     if (currentImg) {
       currentImg.classList.toggle('active')
     }

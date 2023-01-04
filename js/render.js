@@ -41,7 +41,7 @@ export const render = () => {
       alt: 'Calystegia sepium',
     },
   ]
-  /* hook.innerHTML = '<h1>Hello<h1>' */
+
   let firstImgId = 1
   slideUi(hook, pictures)
   slideShow(pictures, firstImgId, true)
